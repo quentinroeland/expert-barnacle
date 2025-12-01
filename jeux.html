@@ -111,13 +111,41 @@
                 icon: "fa-bolt",
                 color: "text-neonYellow",
                 items: [
-                    { name: "Dobble", style: "Rapidité / Observation", level: "Faible", players: "2-8", time: "15 min" },
-                    { name: "Zombie Dice", style: "Dés / Prise de risque", level: "Faible", players: "Illimité", time: "10-30 min" },
-                    { name: "Wasabi", style: "Dés / Rapidité", level: "Faible", players: "2-6", time: "20 min" },
-                    { name: "Mantys", style: "Jeu de cartes / Pièges", level: "Faible", players: "2-6", time: "10 min" },
-                    { name: "Ta Mère en Slip", style: "Devinette / Ambiance", level: "Faible", players: "6", time: "30 min" },
-                    { name: "Exploding Kittens", style: "Cartes / Roulette Russe", level: "Faible", players: "5", time: "15 min" },
-                    { name: "Bears vs Babies", style: "Cartes / Construction de Monstres", level: "Faible", players: "2-5", time: "20 min" }
+                    { 
+                        name: "Dobble", 
+                        description: "Soyez le plus rapide à repérer le symbole en commun entre deux cartes. Observation et réflexes !",
+                        style: "Rapidité / Observation", level: "Faible", players: "2-8", time: "15 min" 
+                    },
+                    { 
+                        name: "Zombie Dice", 
+                        description: "Vous êtes un zombie. Jetez les dés ! Mangez des cerveaux mais ne vous faites pas tuer par un fusil à pompe.",
+                        style: "Dés / Prise de risque", level: "Faible", players: "Illimité", time: "10-30 min" 
+                    },
+                    { 
+                        name: "Wasabi", 
+                        description: "Un jeu de dés rapide et piquant ! Réalisez des combinaisons pour coincer vos adversaires.",
+                        style: "Dés / Rapidité", level: "Faible", players: "2-6", time: "20 min" 
+                    },
+                    { 
+                        name: "Mantys", 
+                        description: "Un jeu de cartes sournois où vous volez des points à vos voisins. Mignon mais méchant !",
+                        style: "Jeu de cartes / Pièges", level: "Faible", players: "2-6", time: "10 min" 
+                    },
+                    { 
+                        name: "Ta Mère en Slip", 
+                        description: "Faites deviner des personnages loufoques avec des lunettes spéciales. Fous rires garantis.",
+                        style: "Devinette / Ambiance", level: "Faible", players: "6", time: "30 min" 
+                    },
+                    { 
+                        name: "Exploding Kittens", 
+                        description: "Une roulette russe avec des chatons explosifs. Désamorcez-les ou mourrez dans d'atroces souffrances mignonnes.",
+                        style: "Cartes / Roulette Russe", level: "Faible", players: "5", time: "15 min" 
+                    },
+                    { 
+                        name: "Bears vs Babies", 
+                        description: "Construisez des monstres improbables (ours-saumon ?) pour dévorer d'horribles bébés. Absurde et stratégique.",
+                        style: "Cartes / Construction de Monstres", level: "Faible", players: "2-5", time: "20 min" 
+                    }
                 ]
             },
             // CATEGORY 2: COCKTAILS (Cartes / Accessibles / Bluff)
@@ -128,11 +156,31 @@
                 icon: "fa-cocktail",
                 color: "text-neonBlue",
                 items: [
-                    { name: "Pixies", style: "Cartes / Draft / Collection", level: "Faible", players: "4", time: "30 min" },
-                    { name: "Mojo", style: "Cartes / Défausse", level: "Faible", players: "3-8", time: "30 min" },
-                    { name: "Seven Wonders Architects", style: "Merveilles / Familial", level: "Moyen", players: "7", time: "25 min" },
-                    { name: "Once Upon a Draft", style: "Plis / Contes de fées", level: "Moyen", players: "3-6", time: "30 min" },
-                    { name: "Moustache", style: "Plis / Bluff", level: "Moyen", players: "6", time: "20 min" }
+                    { 
+                        name: "Pixies", 
+                        description: "Draft et collection dans un univers féerique. Simple, rapide et malin.",
+                        style: "Cartes / Draft / Collection", level: "Faible", players: "4", time: "30 min" 
+                    },
+                    { 
+                        name: "Mojo", 
+                        description: "Débarrassez-vous de vos cartes le plus vite possible, mais attention à ne pas garder les plus grosses valeurs !",
+                        style: "Cartes / Défausse", level: "Faible", players: "3-8", time: "30 min" 
+                    },
+                    { 
+                        name: "Seven Wonders Architects", 
+                        description: "Construisez votre merveille antique. Des règles simples pour une stratégie accessible à tous.",
+                        style: "Merveilles / Familial", level: "Moyen", players: "7", time: "25 min" 
+                    },
+                    { 
+                        name: "Once Upon a Draft", 
+                        description: "Draftez des personnages de contes de fées et jouez des plis magiques.",
+                        style: "Plis / Contes de fées", level: "Moyen", players: "3-6", time: "30 min" 
+                    },
+                    { 
+                        name: "Moustache", 
+                        description: "Un jeu de plis où le bluff est roi. Portez fièrement votre moustache !",
+                        style: "Plis / Bluff", level: "Moyen", players: "6", time: "20 min" 
+                    }
                 ]
             },
             // CATEGORY 3: LONG DRINKS (Plateau / Stratégie / Gestion)
@@ -143,10 +191,26 @@
                 icon: "fa-wine-bottle",
                 color: "text-purple-400",
                 items: [
-                    { name: "Harmonies", style: "Empilement / Nature", level: "Moyen", players: "1-4", time: "30 min" },
-                    { name: "Arkropolis", style: "Tuiles / Construction", level: "Moyen", players: "2-4", time: "30 min" },
-                    { name: "Gunkimono", style: "Plateau / Territoire", level: "Moyen", players: "2-5", time: "60 min" },
-                    { name: "Koro Machi", style: "Gestion de ressources", level: "Moyen", players: "6", time: "45 min" }
+                    { 
+                        name: "Harmonies", 
+                        description: "Créez un écosystème harmonieux en plaçant des jetons pour attirer des animaux. Poétique et cérébral.",
+                        style: "Empilement / Nature", level: "Moyen", players: "1-4", time: "30 min" 
+                    },
+                    { 
+                        name: "Arkropolis", 
+                        description: "Bâtissez la cité la plus prestigieuse en assemblant des tuiles. Optimisez vos quartiers !",
+                        style: "Tuiles / Construction", level: "Moyen", players: "2-4", time: "30 min" 
+                    },
+                    { 
+                        name: "Gunkimono", 
+                        description: "Dominez le territoire japonais. Un jeu de placement de tuiles profond et tactique.",
+                        style: "Plateau / Territoire", level: "Moyen", players: "2-5", time: "60 min" 
+                    },
+                    { 
+                        name: "Koro Machi", 
+                        description: "Lancez les dés, gagnez des pièces et construisez votre ville pour qu'elle devienne la plus prospère.",
+                        style: "Gestion de ressources", level: "Moyen", players: "6", time: "45 min" 
+                    }
                 ]
             },
             // CATEGORY 4: MIXOLOGIE (Coop / Roll&Write / Complexe)
@@ -157,10 +221,26 @@
                 icon: "fa-flask",
                 color: "text-neonPink",
                 items: [
-                    { name: "Welcome to the Moon", style: "Campagne à Cocher (Flip & Write)", level: "Haut", players: "1-6", time: "30 min" },
-                    { name: "Troyes Dice", style: "Flip & Roll Stratégique", level: "Haut", players: "1-10", time: "30 min" },
-                    { name: "Hanabi", style: "Coopération / Déduction", level: "Moyen", players: "5", time: "30 min" },
-                    { name: "The Game", style: "Coopération / Cartes", level: "Faible", players: "1-5", time: "30 min" }
+                    { 
+                        name: "Welcome to the Moon", 
+                        description: "L'aventure continue dans l'espace. Cochez les cases, remplissez vos missions et sauvez l'humanité.",
+                        style: "Campagne à Cocher (Flip & Write)", level: "Haut", players: "1-6", time: "30 min" 
+                    },
+                    { 
+                        name: "Troyes Dice", 
+                        description: "Lancez les dés et défendez la ville de Troyes. Un roll & write riche et stratégique.",
+                        style: "Flip & Roll Stratégique", level: "Haut", players: "1-10", time: "30 min" 
+                    },
+                    { 
+                        name: "Hanabi", 
+                        description: "Coopérez pour tirer le plus beau feu d'artifice, mais vous ne voyez pas vos propres cartes !",
+                        style: "Coopération / Déduction", level: "Moyen", players: "5", time: "30 min" 
+                    },
+                    { 
+                        name: "The Game", 
+                        description: "Battez le jeu ensemble en posant toutes les cartes dans l'ordre croissant ou décroissant. La communication est la clé.",
+                        style: "Coopération / Cartes", level: "Faible", players: "1-5", time: "30 min" 
+                    }
                 ]
             },
             // CATEGORY 5: PUNCH (Escape)
@@ -171,7 +251,11 @@
                 icon: "fa-users",
                 color: "text-green-400",
                 items: [
-                    { name: "Deckscape x6", style: "Escape Game / Énigmes", level: "Faible", players: "1-6", time: "1h" }
+                    { 
+                        name: "Deckscape x6", 
+                        description: "Vivez l'expérience d'un Escape Game de poche. Résolvez les énigmes avant la fin du temps imparti.",
+                        style: "Escape Game / Énigmes", level: "Faible", players: "1-6", time: "1h" 
+                    }
                 ]
             }
         ];
@@ -217,6 +301,8 @@
                             ${getDifficultyBadge(game.level)}
                         </div>
                     </div>
+
+                    <p class="text-xs text-gray-400 mb-3 leading-relaxed z-10">${game.description}</p>
                     
                     <p class="text-sm text-gray-300 mb-6 font-light italic border-l-2 border-gray-600 pl-3 z-10">${game.style}</p>
                     
