@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Bar à Jeux - Carte Complète</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['"Righteous"', 'cursive'],
+                        body: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        night: '#0f172a',
+                        surface: 'rgba(30, 41, 59, 0.7)',
+                        neonPink: '#ff2a6d',
+                        neonBlue: '#05d9e8',
+                        neonYellow: '#f9c80e',
+                        neonPurple: '#d946ef',
+                    },
+                    boxShadow: {
+                        'neon-pink': '0 0 10px rgba(255, 42, 109, 0.5), 0 0 20px rgba(255, 42, 109, 0.3)',
+                        'neon-blue': '0 0 10px rgba(5, 217, 232, 0.5), 0 0 20px rgba(5, 217, 232, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+            background-attachment: fixed;
+            color: #e2e8f0;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-text-pink { text-shadow: 0 0 5px #ff2a6d, 0 0 10px #ff2a6d; }
+        .neon-text-blue { text-shadow: 0 0 5px #05d9e8, 0 0 10px #05d9e8; }
+        .neon-text-yellow { text-shadow: 0 0 5px #f9c80e, 0 0 10px #f9c80e; }
+
+        .cocktail-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cocktail-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Custom scrollbar for better integration */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+<body class="font-body min-h-screen p-4 pb-20">
+
+    <!-- Header -->
+    <header class="text-center py-10 mb-8 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl h-32 bg-purple-900 filter blur-3xl opacity-20 -z-10"></div>
+        
+        <h3 class="text-neonBlue tracking-[0.3em] text-sm uppercase font-bold mb-2 animate-pulse">Soirée Jeux - Gemini Edition</h3>
+        <h1 class="font-display text-5xl md:text-7xl text-white mb-2 neon-text-pink transform -rotate-2 inline-block">
+            GAME BAR
+        </h1>
+        <div class="flex justify-center items-center space-x-2 mt-2 text-gray-400 text-sm md:text-base font-light tracking-wide">
+            <i class="fas fa-glass-martini-alt text-neonYellow"></i>
+            <span>21 Variétés à la carte</span>
+            <i class="fas fa-glass-martini-alt text-neonYellow"></i>
+        </div>
+    </header>
+
+    <!-- Menu Container -->
+    <main id="menu-container" class="max-w-6xl mx-auto space-y-20">
+        <!-- Sections injected by JS -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center mt-20 text-gray-500 text-xs pb-10">
+        <div class="flex justify-center space-x-6 mb-4">
+            <span class="flex items-center"><div class="w-2 h-2 rounded-full bg-green-400 mr-2 shadow-[0_0_8px_rgba(74,222,128,0.8)]"></div>Cool (Faible)</span>
+            <span class="flex items-center"><div class="w-2 h-2 rounded-full bg-yellow-400 mr-2 shadow-[0_0_8px_rgba(250,204,21,0.8)]"></div>Spicy (Moyen)</span>
+            <span class="flex items-center"><div class="w-2 h-2 rounded-full bg-red-500 mr-2 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></div>Corsé (Haut)</span>
+        </div>
+        <p>L'abus de victoire peut nuire à l'amitié. Jouez avec modération.</p>
+    </footer>
+
+    <script>
+        const games = [
+            // CATEGORY 1: SHOTS (Rapide / Fun / Ambiance)
+            {
+                id: "shots",
+                title: "Les Shots & Shooters",
+                subtitle: "Explosifs, rapides et funs. Idéal pour briser la glace.",
+                icon: "fa-bolt",
+                color: "text-neonYellow",
+                items: [
+                    { name: "Dobble", style: "Rapidité / Observation", level: "Faible", players: "2-8", time: "15 min" },
+                    { name: "Zombie Dice", style: "Dés / Prise de risque", level: "Faible", players: "Illimité", time: "10-30 min" },
+                    { name: "Wasabi", style: "Dés / Rapidité", level: "Faible", players: "2-6", time: "20 min" },
+                    { name: "Mantys", style: "Jeu de cartes / Pièges", level: "Faible", players: "2-6", time: "10 min" },
+                    { name: "Ta Mère en Slip", style: "Devinette / Ambiance", level: "Faible", players: "6", time: "30 min" },
+                    { name: "Exploding Kittens", style: "Cartes / Roulette Russe", level: "Faible", players: "5", time: "15 min" },
+                    { name: "Bears vs Babies", style: "Cartes / Construction de Monstres", level: "Faible", players: "2-5", time: "20 min" }
+                ]
+            },
+            // CATEGORY 2: COCKTAILS (Cartes / Accessibles / Bluff)
+            {
+                id: "cocktails",
+                title: "Cocktails Légers",
+                subtitle: "Des mélanges savoureux de cartes et de tactique douce.",
+                icon: "fa-cocktail",
+                color: "text-neonBlue",
+                items: [
+                    { name: "Pixies", style: "Cartes / Draft / Collection", level: "Faible", players: "4", time: "30 min" },
+                    { name: "Mojo", style: "Cartes / Défausse", level: "Faible", players: "3-8", time: "30 min" },
+                    { name: "Seven Wonders Architects", style: "Merveilles / Familial", level: "Moyen", players: "7", time: "25 min" },
+                    { name: "Once Upon a Draft", style: "Plis / Contes de fées", level: "Moyen", players: "3-6", time: "30 min" },
+                    { name: "Moustache", style: "Plis / Bluff", level: "Moyen", players: "6", time: "20 min" }
+                ]
+            },
+            // CATEGORY 3: LONG DRINKS (Plateau / Stratégie / Gestion)
+            {
+                id: "long-drinks",
+                title: "Long Drinks & Grands Crus",
+                subtitle: "Pour prendre le temps d'apprécier la stratégie.",
+                icon: "fa-wine-bottle",
+                color: "text-purple-400",
+                items: [
+                    { name: "Harmonies", style: "Empilement / Nature", level: "Moyen", players: "1-4", time: "30 min" },
+                    { name: "Arkropolis", style: "Tuiles / Construction", level: "Moyen", players: "2-4", time: "30 min" },
+                    { name: "Gunkimono", style: "Plateau / Territoire", level: "Moyen", players: "2-5", time: "60 min" },
+                    { name: "Koro Machi", style: "Gestion de ressources", level: "Moyen", players: "6", time: "45 min" }
+                ]
+            },
+            // CATEGORY 4: MIXOLOGIE (Coop / Roll&Write / Complexe)
+            {
+                id: "mixology",
+                title: "Mixologie Signature",
+                subtitle: "Des assemblages complexes. Coopération ou Réflexion intense.",
+                icon: "fa-flask",
+                color: "text-neonPink",
+                items: [
+                    { name: "Welcome to the Moon", style: "Campagne à Cocher (Flip & Write)", level: "Haut", players: "1-6", time: "30 min" },
+                    { name: "Troyes Dice", style: "Flip & Roll Stratégique", level: "Haut", players: "1-10", time: "30 min" },
+                    { name: "Hanabi", style: "Coopération / Déduction", level: "Moyen", players: "5", time: "30 min" },
+                    { name: "The Game", style: "Coopération / Cartes", level: "Faible", players: "1-5", time: "30 min" }
+                ]
+            },
+            // CATEGORY 5: PUNCH (Escape)
+            {
+                id: "punch",
+                title: "Le Punch Bowl",
+                subtitle: "Une aventure à partager tous ensemble.",
+                icon: "fa-users",
+                color: "text-green-400",
+                items: [
+                    { name: "Deckscape x6", style: "Escape Game / Énigmes", level: "Faible", players: "1-6", time: "1h" }
+                ]
+            }
+        ];
+
+        const getDifficultyBadge = (level) => {
+            const l = (level || '').toLowerCase();
+            if (l.includes('faible')) return '<span class="inline-block w-3 h-3 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)]" title="Niveau Faible"></span>';
+            if (l.includes('moyen')) return '<span class="inline-block w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.8)]" title="Niveau Moyen"></span>';
+            if (l.includes('haut')) return '<span class="inline-block w-3 h-3 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]" title="Niveau Haut"></span>';
+            return '<span class="inline-block w-3 h-3 rounded-full bg-gray-600"></span>';
+        };
+
+        const container = document.getElementById('menu-container');
+
+        games.forEach(section => {
+            // Section Header
+            const sectionHeader = `
+                <div class="flex items-center mb-8 pl-4 md:pl-0 border-l-4 border-${section.color.replace('text-', '')} md:border-l-0">
+                    <div class="hidden md:flex w-14 h-14 rounded-2xl bg-gray-800 items-center justify-center text-2xl mr-5 border border-gray-700 shadow-lg">
+                        <i class="fas ${section.icon} ${section.color}"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-display text-3xl md:text-4xl text-white uppercase tracking-wider neon-text-${section.color.includes('Pink') ? 'pink' : section.color.includes('Blue') ? 'blue' : 'yellow'}">${section.title}</h2>
+                        <p class="text-gray-400 text-sm font-light mt-1">${section.subtitle}</p>
+                    </div>
+                </div>
+            `;
+
+            // Grid
+            const itemsGrid = document.createElement('div');
+            itemsGrid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6';
+
+            section.items.forEach(game => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel p-6 rounded-2xl cocktail-card relative overflow-hidden group flex flex-col h-full';
+                
+                card.innerHTML = `
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white to-transparent opacity-5 rounded-bl-full -mr-6 -mt-6 transition-all duration-500 group-hover:opacity-10 group-hover:scale-110"></div>
+                    
+                    <div class="flex justify-between items-start mb-2 z-10">
+                        <h3 class="font-bold text-xl text-white group-hover:text-neonBlue transition-colors leading-tight pr-4">${game.name}</h3>
+                        <div class="flex-shrink-0 mt-1">
+                            ${getDifficultyBadge(game.level)}
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm text-gray-300 mb-6 font-light italic border-l-2 border-gray-600 pl-3 z-10">${game.style}</p>
+                    
+                    <div class="mt-auto pt-4 border-t border-gray-700/50 flex items-center justify-between text-xs text-gray-400 z-10">
+                        <div class="flex items-center bg-gray-800/80 px-3 py-1.5 rounded-lg border border-gray-700">
+                            <i class="fas fa-clock mr-2 ${section.color}"></i> ${game.time}
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-user-friends mr-2 text-gray-300"></i> ${game.players}
+                        </div>
+                    </div>
+                `;
+                itemsGrid.appendChild(card);
+            });
+
+            // Wrapper
+            const sectionWrapper = document.createElement('section');
+            sectionWrapper.innerHTML = sectionHeader;
+            sectionWrapper.appendChild(itemsGrid);
+            container.appendChild(sectionWrapper);
+        });
+    </script>
+</body>
+</html>
